@@ -17,8 +17,8 @@ def tensor_to_dataset(tensor_data, tensor_label):
 
 # conversion data: numpy -> tensor
 def np_to_tensor(data, label, device='cpu'):
-    tensor_data = torch.Tensor(data)
-    tensor_label = torch.Tensor(label)
+    tensor_data = torch.from_numpy(data)
+    tensor_label = torch.from_numpy(label)
     tensor_data.to(device)
     tensor_label.to(device)
     return tensor_data, tensor_label
